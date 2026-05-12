@@ -22,8 +22,8 @@ body {
     overflow-x: hidden;
     min-height: 100vh;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    flex-direction: column;
+    padding: 20px 0;
 }
 
 /* 背景の装飾的な円 */
@@ -73,6 +73,7 @@ body {
     width: 100%;
     max-width: 600px;
     padding: 20px;
+    margin: auto;
 }
 
 /* プロフィールカード */
@@ -190,6 +191,34 @@ h2::after {
     font-weight: 500;
 }
 
+/* SNSリンク */
+.sns-links {
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 10px;
+}
+
+.sns-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #0f1419;
+    color: #ffffff;
+    padding: 10px 24px;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 0.95rem;
+    transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.sns-link:hover {
+    transform: translateY(-2px);
+    background-color: #272c30;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
 /* フッター */
 .profile-footer {
     margin-top: 20px;
@@ -210,11 +239,59 @@ h2::after {
 }
 
 /* レスポンシブ */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
+    body {
+        padding: 10px 0;
+    }
+    .container {
+        padding: 15px;
+    }
     .profile-card {
         padding: 30px 20px;
+        border-radius: 20px;
+    }
+    .profile-image {
+        width: 100px;
+        height: 100px;
     }
     .name {
         font-size: 1.5rem;
+    }
+    section {
+        margin-bottom: 25px;
+    }
+    h2 {
+        font-size: 1.1rem;
+        margin-bottom: 12px;
+    }
+    .bio-text {
+        font-size: 0.9rem;
+        line-height: 1.7;
+        text-align: left; /* スマホ画面で単語間隔が不自然に空くのを防ぐ */
+    }
+    .hobbies-list {
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+    .hobby-item {
+        padding: 10px 5px;
+        min-width: 85px;
+        border-radius: 10px;
+    }
+    .hobby-icon {
+        width: 40px;
+        height: 40px;
+    }
+    .hobby-name {
+        font-size: 0.8rem;
+    }
+    .sns-links {
+        justify-content: center;
+    }
+    .sns-link {
+        width: 100%;
+        padding: 12px 20px;
+        font-size: 1rem;
+        border-radius: 14px;
     }
 }
